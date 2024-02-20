@@ -1,30 +1,30 @@
 // Imports
 import { DataTypes } from 'sequelize'
 import sequelize from '../db.js'
-import { ModelUsuario } from './Usuario.js'
+import { ModelUser } from './User.js'
 
 // Modelling
-export const ModelMotorista = sequelize.define('motorista', {
+export const ModelDriver = sequelize.define('driver', {
     id: {
         type: DataTypes.UUID,
         allowNull: false,
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4
     },
-    modeloCarro: {
+    carModel: {
         type: DataTypes.STRING
     },
-    anoCarro: {
+    carYear: {
         type: DataTypes.INTEGER
     },
-    quantidadePassageiros: {
+    passengerQuantity: {
         type: DataTypes.INTEGER
     },
-    valorPorPassageiro: {
+    pricePerPassenger: {
         type: DataTypes.FLOAT
     }
 })
 
-ModelMotorista.belongsTo(ModelUsuario, {
-    foreignKey: 'idUsuario'
+ModelDriver.belongsTo(ModelUser, {
+    foreignKey: 'idUser'
 })

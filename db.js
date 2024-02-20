@@ -1,13 +1,8 @@
 import { Sequelize } from 'sequelize'
 
-// const dbname = process.env.PLANETSCALE_DB
-// const username = process.env.PLANETSCALE_DB_USERNAME
-// const password = process.env.PLANETSCALE_DB_PASSWORD
-// const hostname = process.env.PLANETSCALE_DB_HOST
-// const ssl = process.env.PLANETSCALE_SSL_CERT_PATH
 const database_url = process.env.DATABASE_URL
 
-const sequelize = new Sequelize(database_url, {
+const sequelize = new Sequelize(`postgres://zuubqdrl:lRMS7LpUZ1aXKQ9QC14A02n1KLtUYyw5@kesavan.db.elephantsql.com/zuubqdrl`, {
     dialect: 'postgres',
     benchmark: true
 })

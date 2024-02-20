@@ -3,24 +3,24 @@ import { DataTypes } from 'sequelize'
 import sequelize from '../db.js'
 
 // Modelling
-export const ModelUsuario = sequelize.define('usuario', {
+export const ModelUser = sequelize.define('user', {
     id: {
         type: DataTypes.UUID,
         allowNull: false,
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4
     },
-    usuario: {
+    username: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
     },
-    senha: {
+    password: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
     },
-    nome: {
+    name: {
         type: DataTypes.STRING
     },
     email: {
@@ -28,7 +28,7 @@ export const ModelUsuario = sequelize.define('usuario', {
         allowNull: false,
         unique: true
     },
-    telefones: {
+    phones: {
         type: DataTypes.STRING
     }
 })
